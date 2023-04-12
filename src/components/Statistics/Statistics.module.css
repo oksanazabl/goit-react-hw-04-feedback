@@ -1,7 +1,9 @@
-.Statistics{
-    background-color: pink;
-}
 
 .Statistics__poit{
-    border: 2px solid blue;
+    /* margin-right: 15px;
+    margin-left: 15px; */
+    font-size: 18px;
+    font-family: monospace;
+    /* text-align: center; */
 }
+

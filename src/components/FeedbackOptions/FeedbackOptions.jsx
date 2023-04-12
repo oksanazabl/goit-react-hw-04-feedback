@@ -1,4 +1,4 @@
-import css from './Counter.module.css';
+import css from './FeedbackOptions.module.css';
 
 const Counter = ({onFeedback}) => {
   return (
