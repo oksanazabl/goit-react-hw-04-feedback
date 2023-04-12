@@ -1,6 +1,6 @@
 import css from './Statistics.module.css';
 
-const Statistics = ({ good, neutral, bad }) => {
+const Statistics = ({ good, neutral, bad, total, pasitiveParsentage }) => {
   return (
     <ul className={css.Statistics}>
       <li className={css.Statistics__poit}>
@@ -12,6 +12,12 @@ const Statistics = ({ good, neutral, bad }) => {
       </li>
       <li className={css.Statistics__poit}>
         Bad: {bad}
+      </li>
+      <li className={css.Statistics__poit}>
+        Total: {total}
+      </li>
+      <li className={css.Statistics__poit}>
+      Pasitive feedback: {pasitiveParsentage}%
       </li>
     </ul>
   );

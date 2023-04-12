@@ -18,6 +18,11 @@ class App extends Component {
     });
   };
 
+  totalFeedback = () => {
+    const total = this.state.good + this.state.neutral + this.state.bad;
+    return total;
+  };
+
   render() {
     return (
       <div>
@@ -26,9 +31,12 @@ class App extends Component {
         </Section>
         <Section title="Statistics">
           <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.totalFeedback()}
+            
+
           />
         </Section>
       </div>
