@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Section from './Section';
 import Counter from './Counter';
+import Statistics from './Statistics';
 
 class App extends Component {
   state = {
@@ -9,31 +10,29 @@ class App extends Component {
     bad: 0,
   };
 
-  addFeedback = (event) => {
+  addFeedback = event => {
     this.setState(prevState => {
       return {
         [event.target.name]: prevState[event.target.name] + 1,
       };
     });
   };
-  
 
   render() {
     return (
-    <div>
-      <Section title="Please leave feedback">
-      <Counter onFeedback={this.addFeedback}/>
-    </Section>
-     <Section title="Statistics">
-     
-     </Section>
-    </div>
-
-    )
-
-    
-    
- 
+      <div>
+        <Section title="Please leave feedback">
+          <Counter onFeedback={this.addFeedback} />
+        </Section>
+        <Section title="Statistics">
+          <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          />
+        </Section>
+      </div>
+    );
   }
 }
 
