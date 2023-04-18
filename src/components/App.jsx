@@ -35,8 +35,7 @@ class App extends Component {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions onFeedback={this.onLeaveFeedback}
-          option={option} />
+          <FeedbackOptions onFeedback={this.onLeaveFeedback}/>
         </Section>
         <Section title="Statistics">
           {TotalFeedback > 0 ? (

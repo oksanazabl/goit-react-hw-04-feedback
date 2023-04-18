@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 
-const Counter = ({onFeedback}) => {
+const FeedbackOptions = ({onFeedback}) => {
   return (
     // <div className={css.Counter}>
       <div className={css.Counter__controls}>
@@ -19,8 +19,8 @@ const Counter = ({onFeedback}) => {
   );
 };
 
-Counter.propTypes = {
+FeedbackOptions.propTypes = {
   onFeedback: PropTypes.func.isRequired,
 };
 
-export default Counter;
+export default FeedbackOptions;
