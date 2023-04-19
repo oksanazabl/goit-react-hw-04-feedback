@@ -1,4 +1,4 @@
-.Counter__controls > button {
+.button {
   border: none;
   padding: 10px 15px;
   background-color: rgb(1, 89, 89);
@@ -14,7 +14,7 @@
   transition: box-shadow 250ms linear;
 }
 
-.Counter__controls > button:active {
+.button:active {
   box-shadow: 2px 5px 2px 0 rgb(0 0 0 / 0.5);
 }
 

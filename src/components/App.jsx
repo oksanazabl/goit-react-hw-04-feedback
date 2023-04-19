@@ -12,12 +12,17 @@ class App extends Component {
   };
 
   onLeaveFeedback = event => {
-    this.setState(prevState => {
-      return {
-        [event.target.name]: prevState[event.target.name] + 1,
-      };
-    });
+    this.setState(prevState => ({
+      [event]: prevState[event] + 1,
+    }));
   };
+  // onLeaveFeedback = event => {
+  //   this.setState(prevState => {
+  //     return {
+  //       [event.target.name]: prevState[event.target.name] + 1,
+  //     };
+  //   });
+  // };
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -32,10 +37,14 @@ class App extends Component {
   render() {
     const TotalFeedback = this.countTotalFeedback();
     const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions onFeedback={this.onLeaveFeedback}/>
+          <FeedbackOptions
+            onFeedback={this.onLeaveFeedback}
+            options={options}
+          />
         </Section>
         <Section title="Statistics">
           {TotalFeedback > 0 ? (
