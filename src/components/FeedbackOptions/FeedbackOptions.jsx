@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import css from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onFeedback }) => {
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleButtonClick = (option) => {
+    setSelectedOption(option);
+    onFeedback(option);
+  };
+
   return (
     <div className={css.Counter}>
       {options.map(option => (
         <button
-          className={css.button}
+          className={`${css.button} ${selectedOption === option ? css.activeButton : ''}`}
           type="button"
           key={option}
-          onClick={() => onFeedback(option)}
+          onClick={() => handleButtonClick(option)}
         >
           {option}
         </button>
@@ -17,23 +25,6 @@ const FeedbackOptions = ({ options, onFeedback }) => {
     </div>
   );
 };
-// const FeedbackOptions = ({onFeedback}) => {
-//   return (
-//     // <div className={css.Counter}>
-//       <div className={css.Counter__controls}>
-//         <button type="button" name='good' onClick={onFeedback}>
-//           Good
-//         </button>
-//         <button type="button" name='neutral' onClick={onFeedback}>
-//           Neutral
-//         </button>
-//         <button type="button" name='bad' onClick={onFeedback}>
-//           Bad
-//         </button>
-//       </div>
-//     // </div>
-//   );
-// };
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
