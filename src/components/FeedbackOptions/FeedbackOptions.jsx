@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+
 import css from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onFeedback }) => {
-  const [selectedOption, setSelectedOption] = useState('');
-
   const handleButtonClick = (option) => {
-    setSelectedOption(option);
     onFeedback(option);
   };
 
@@ -14,7 +11,7 @@ const FeedbackOptions = ({ options, onFeedback }) => {
     <div className={css.Counter}>
       {options.map(option => (
         <button
-          className={`${css.button} ${selectedOption === option ? css.activeButton : ''}`}
+          className={css.button}
           type="button"
           key={option}
           onClick={() => handleButtonClick(option)}
